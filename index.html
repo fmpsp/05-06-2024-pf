@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/jpg" href="media/favicon.png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Between Two Worlds</title>
+</head>
+<body>
+    <div id="holder">
+        <div class="topdiv">
+            <div class="header">
+                <br>
+                <h1 class="tite" style="font-size: 40px"><b>Between Two Worlds</b></h1> 
+                <h2  class="artiste" style="font-size: 25px"><i>by Mili</i></h2> 
+                <p class="fer" style="font-size: 10px;">Website by Matthew Jason M. Flordeliza of ICT 11</p>
+                <br>
+                <br>
+                <br>
+            </div>
+            <div class="lyrics">
+                <pre>                    [Realm of Light]
+            Ooh
+            It's this time of the year
+            A very so merry night we hold dear
+            So many, so many regrets bring me to tears
+            Not many, not many notice nor care
+            
+            Oh, oh, oh,
+            My savior
+            Oh, oh, oh
+            Why does a common fire hold so much power?
+            
+            If only we could be forever naïve and pure
+            If only we could lead painless futures
+            If only there could be a forgiving world
+        
+                    [Realm of Darkness]
+            Maybe that was when
+            I chose to stay fallen
+            
+            Lights
+            A star
+            A voice
+            A twisted thought
+            
+            A touch
+            A kiss
+            A distorted dream
+            
+            Ripples (ripples)
+            A well (a well)
+            A stone (a stone)
+            A multiplying desire (desire)
+            A fruit (a fruit)
+            A sin (a sin)
+            A holy mother
+            
+            I'm infected, I'm infected
+            You have invaded and re-created me
+            
+            Stepped over my body
+            Found a sunny spot
+            Curled into a ball
+            Spinning out the silk
+            From my head to toe
+            
+            Inside the warm cocoon, I dreamt to be like you
+            Though I know there's no undo
+            What do I have left to lose?
+            
+            Split
+            A sky
+            An earth
+            I fell into a crack (a crack)
+            
+            A birth (a birth)
+            An egg (an egg)
+            A freshly opened membrane
+            A cell
+            A rot
+            A face returned to ashes
+            A wound
+            An art
+            A sentient canvas
+
+            Breaking, breaking, breaking the shell
+            Breaking out, oh break it now
+            Show me how, show me how
+            Listen up, my broken child
+            Let's lament, let's lament
+            The life, the death, the good, the bad
+            The never ending curse we cast
+            
+            Control, control, control, release
+            Control, betray, control, let go
+            Conceal, reveal, unreal, surreal
+            Invoke, evoke, decode, reload
+            Let's lament, let's lament
+            The past that only got to live in the incomplete holy land
+        
+            Celestial (ayiah)
+            We're astral (ayiou)
+            I'm reborn (le rheaiah)
+            Total liberation (katre o lamenta)
+            My tender skin
+            A vagitus song (essential)
+            
+            I breathed (eventual)
+            And screamed (eternal)
+            From my new lungs (inevitable freeing of the soul)
+            </pre>
+            </div>
+            <div class="spotify">
+                <div class="music-player">
+                    <div class="song-bar">
+                        <div class="song-infos">
+                            <div class="image-container">
+                                <img src="media/cover.jpg" alt="Cover">
+                            </div>
+                            <div class="song-description">
+                                <p class="title">Between Two Worlds</p>
+                                <p class="artist"><a class="artist" href="https://projectmili.com" >Mili</a></p>
+                            </div>  
+                        </div>
+                    </div>
+                    
+                    <div class="progress-controller">
+                        <div class="control-buttons">
+                            <i class="fas fa-random"></i>
+                            <div onclick="backward()"><i class="fas fa-step-backward"></i></div>
+                            <div onclick="playPause()"><i class="play-pause fas fa-pause" id="ctrlIcon"></i></div>
+                            <div onclick="forward();"><i class="fas fa-step-forward"></i></div>
+                            <div onclick="backward()"><i class="fas fa-undo-alt"></i></div>
+                        </div>
+                        <div class="progress-container">
+                            <audio id="song">
+                                <source src="media/audio.ogg" type="audio/ogg">
+                            </audio>
+                            <span class="current-time">0:00</span>
+                            <input type="range" value="0" id="progress">
+                            <span class="total-duration">0:00</span>
+                        </div>
+                    </div>
+                    <div class="other-features">
+                        <i class="fas fa-volume-down"></i>
+                        <input type="range" min="1" max="100" value="99" id="volume_slider" class="volume_slider" onchange="setVolume()">
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+    <script>
+        let progress = document.getElementById("progress");
+        let volume_slider = document.getElementById("volume_slider");
+        let song = document.getElementById("song");
+        let ctrlIcon = document.getElementById("ctrlIcon");
+        let curr_time = document.querySelector('.current-time');
+        let total_duration = document.querySelector('.total-duration');
+
+        song.onloadedmetadata = function(){
+            curr_time.textContent = "0:00";
+            total_duration.textContent = "0:00";
+            progress.max = song.duration;
+            progress.value = song.currentTime;
+            volume_slider.value = song.volume
+        }
+
+        function playPause(){
+            if(ctrlIcon.classList.contains("fa-pause")){
+                song.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+            }
+            else{
+                song.play();
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+            }
+        }
+        
+        function backward(){
+            progress.value = 0;
+            song.currentTime = progress.value;
+            if(ctrlIcon.classList.contains("fa-play")){
+                song.play();
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+            }
+        }
+        
+        function forward(){
+            progress.value = 300;
+            song.currentTime = progress.value;
+            if(ctrlIcon.classList.contains("fa-pause")){
+                song.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+            }
+        }
+
+        function setVolume(){
+            song.volume = volume_slider.value/100;
+        }
+
+        if(song.play()){
+            setInterval(()=>{
+                progress.value = song.currentTime;
+                setUpdate();
+            },500);
+        }
+
+        progress.onchange = function(){
+            song.play();
+            song.currentTime = progress.value;
+            ctrlIcon.classList.add("fa-pause");
+            ctrlIcon.classList.remove("fa-play");
+        }
+
+        function setUpdate(){
+            if(!isNaN(song.duration)){
+
+                let currentMinutes = Math.floor(song.currentTime / 60);
+                let currentSeconds = Math.floor(song.currentTime - currentMinutes * 60);
+                let durationMinutes = Math.floor(song.duration / 60);
+                let durationSeconds = Math.floor(song.duration - durationMinutes * 60);
+
+                if(currentSeconds < 10) {currentSeconds = "0" + currentSeconds; }
+                if(durationSeconds < 10) { durationSeconds = "0" + durationSeconds; }
+                if(currentMinutes < 10) {currentMinutes = "0" + currentMinutes; }
+                if(durationMinutes < 10) { durationMinutes = "0" + durationMinutes; }
+
+                curr_time.textContent = currentMinutes + ":" + currentSeconds;
+                total_duration.textContent = durationMinutes + ":" + durationSeconds;
+            }
+        }
+    </script>
+</body>
+</html>
