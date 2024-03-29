@@ -1,8 +1,12 @@
 @media (max-width: 425px) {
-    i.fa-random, i.fa-undo-alt, i.fa-step-backward, i.fa-step-forward, span.current-time, span.total-duration   {
+    .back, .front, .und, i.fa-random, span.current-time, span.total-duration   {
         display: none;
     }
-
+    .control-buttons {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+    }
     .volume_slider {
         width: 80px;
     }
