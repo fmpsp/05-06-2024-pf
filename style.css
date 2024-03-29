@@ -1,17 +1,3 @@
-@media (max-width: 425px) {
-    .back, .front, .und, i.fa-random, span.current-time, span.total-duration   {
-        display: none;
-    }
-    .control-buttons {
-        display: flex;
-        align-items: center;
-        gap: 2em;
-    }
-    .volume_slider {
-        width: 80px;
-    }
-}
-
 * {
     box-sizing: border-box;
     font-family: "DM Mono", monospace;
@@ -31,7 +17,7 @@ body {
 }
 
 #menu {
-	background: #ededed;
+	background: #be4f4f;
 	height: 45px;
 	border-radius: 10px;
 }
