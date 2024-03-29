@@ -1,5 +1,5 @@
-@media (max-width: 555px) {
-    i.fa-random, i.fa-undo-alt, span.current-time, span.total-duration   {
+@media (max-width: 425px) {
+    i.fa-random, i.fa-undo-alt, i.fa-step-backward, i.fa-step-forward, span.current-time, span.total-duration   {
         display: none;
     }
 
@@ -34,15 +34,21 @@ body {
 }
 
 .lyrics {
+    margin-top: 5%;
     font-size: 12px;
     padding-bottom: 100px;
-    text-align: justify;
-    columns: 320px 3;
-    -webkit-columns: 320px 3;
-    -moz-columns: 320px 3;
-    column-gap: 50px;
-    -webkit-column-gap: 50px;
-    -moz-column-gap: 50px;
+    columns: 35em auto;
+    -webkit-columns: 35em auto;
+    -moz-columns: 35em auto;
+    column-gap: 5em;
+    -webkit-column-gap: 5em;
+    -moz-column-gap: 5em;
+} 
+
+pre {
+    margin-left: 2em;
+    margin-right: 2em;
+    white-space: pre-line;
 }
 
 .music-player {
