@@ -12,12 +12,20 @@ body {
 
 
 .header{
-    margin-top: 2.5%;
+    margin: 2.5%;
     text-align: center;
 }
 
+h1.title {
+	font-size: 40px
+}
+
+p.subtitle {
+	font-size: 20px;
+}
+
 #menu {
-	background: #be4f4f;
+	background: #ededed;
 	height: 45px;
 	border-radius: 10px;
 }
@@ -108,4 +116,6 @@ body {
 	#menu input:checked + label {color:#000000}
 	#menu input:checked + label:before {content:"\00d7"}
 	#menu input:checked ~ ul {display:block}
+	h1.title {font-size: 30px;}
+	p.subtitle {font-size: 15px;}
 }
