@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="songstyle.css">
     <link rel="shortcut icon" type="image/jpg" href="media/favicon.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,7 +13,20 @@
     <title>Between Two Worlds</title>
 </head>
 <body>
-    <li><a href="index.html">back</a></li>
+    <nav id="menu">
+        <input type="checkbox" id="responsive-menu" onclick="updatemenu()"><label></label>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="dropdown-arrow">Performance Tasks</a>
+            <ul class="sub-menus">
+              <li><a href="introduction.html">PT 1 - Intro</a></li>
+              <li><a href="song.html">PT 2 - Lyrics</a></li>
+              <li><a href="table.html">PT 3 - Tables</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html">About</a></li>
+        </ul>
+      </nav>
     <div class="header">
         <h1 style="font-size: 40px"><b>Between Two Worlds</b></h1> 
         <h2 style="font-size: 25px"><i>by Mili</i></h2> 

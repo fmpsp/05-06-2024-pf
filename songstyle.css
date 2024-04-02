@@ -39,9 +39,9 @@ body {
 }
 
 .lyrics {
-    margin-top: 5%;
+    margin-top: 2%;
     font-size: 12px;
-    padding-bottom: 100px;
+    padding-bottom: 120px;
     columns: 35em auto;
     -webkit-columns: 35em auto;
     -moz-columns: 35em auto;
