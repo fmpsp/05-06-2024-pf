@@ -1,12 +1,30 @@
+:root {
+	--font-family: "DM Mono", monospace;
+	--font-size: 14px;
+    --font-size-lyrics: 14px; /* 1.5em (default) */
+    --font-weight: 400; /* 200 : 900 */
+    --line-height: 1.2;
+
+    --border-radius: 0px;
+    --border-width: 1px;
+    --border-style: solid;
+	--background-color: rgba(238,238,238);
+	--background-color-2: rgb(221, 221, 221);
+	--color: rgba(17, 17, 17);
+}
+
 * {
     box-sizing: border-box;
-    font-family: "DM Mono", monospace;
+    font-family: var(--font-family) !important;
+	font-weight: var(--font-weight) !important;
+	line-height: var(--line-height);	
+	color: var(--color) !important;
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: #ededed;
+    background-color: var(--background-color);
 }
 
 
@@ -23,39 +41,65 @@ p.subtitle {
 	font-size: 20px;
 }
 
+.navbar {
+	margin: 1.5%;
+	border: var(--border-width) var(--border-style);
+}
+
+.navbar::before {
+    position: absolute;
+    margin: -10px 4px;
+    padding: 0 3px;
+    z-index: 9;
+	content: "Navigation";
+	background: var(--background-color);
+}
+
 #menu {
-	background: #ededed;
-	height: 45px;
-	border-radius: 10px;
+    height: auto;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	background: var(--background-color);
 }
 #menu ul, #menu li {
-	margin: 0 auto;
-	padding: 0;
+	margin: 0;
 	list-style: none
 }
-#menu ul {
-	width: 100%;
+#menu ul.main-menu {	
+	padding: 8px 12px;
 	text-align: center;
 }
 #menu li {
 	display: inline-block;
 	position: relative;
 }
+
 #menu a {
 	display: block;
+	cursor: pointer;
 	line-height: 45px;
-	padding: 0 14px;
 	text-decoration: none;
-	color: #000000;
-	font-size: 16px;
 }
+
+#menu a.main-links {
+	display: block;
+	cursor: pointer;
+	line-height: 45px;
+	margin: 0 14px;
+}
+
+#menu a.sub-links {
+	text-wrap: nowrap;
+	padding: 0 57px;
+}
+
 #menu a.dropdown-arrow:after {
-	content: "\25BF";
-	margin-left: 5px;
+	content: " \25BF";
 }
 #menu li a:hover {
-	color: #797979;
-	background: #F2F2F2;
+	text-decoration: underline;
 }
 #menu input {
 	display: none;
@@ -75,34 +119,36 @@ p.subtitle {
 }
 #menu label:before {
 	font-size: 1.6em;
-	color: #000000;
 	content: "\2261"; 
 	margin-left: 20px;
 }
 #menu ul.sub-menus{
+	padding-inline-start: 0px;
+	padding-inline-end: 0px;
 	height: auto;
 	overflow: hidden;
-	width: 170px;
-	background: #ededed;
+	background: var(--background-color);
 	position: absolute;
 	z-index: 99;
 	display: none;
+	text-decoration: none;
 }
 #menu ul.sub-menus li {
+	padding: 0, 0, 0, 0;
 	display: block;
 	text-align: left;
 	width: 100%;
 }
 #menu ul.sub-menus a {
-	color: #000000;
-	font-size: 16px;
+	font-size: 12px;
 }
 #menu li:hover ul.sub-menus {
 	display: block
 }
 #menu ul.sub-menus a:hover{
-	background: #F2F2F2;
+	background: var(--background-color-2);
 	color: #797979;
+	text-decoration: none;
 }
 @media screen and (max-width: 800px){
 	#menu {position:relative}

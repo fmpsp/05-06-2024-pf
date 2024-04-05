@@ -12,22 +12,22 @@
     <title>Portfolio</title>
 </head>
 <body>
-  <div>
+  <div class="navbar">
     <nav id="menu">
-      <input type="checkbox" id="responsive-menu" onclick="updatemenu()"><label></label>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a class="dropdown-arrow">Performance Tasks</a>
-          <ul class="sub-menus">
-            <li><a href="page/introduction.html">PT 1 - Intro</a></li>
-            <li><a href="page/song.html">PT 2 - Lyrics</a></li>
-            <li><a href="page/table.html">PT 3 - Tables</a></li>
-          </ul>
-        </li>
-        <li><a href="index.html">About</a></li>
-      </ul>
+        <input type="checkbox" id="responsive-menu" on  click="updatemenu()"><label></label>
+        <ul class="main-menu">
+            <li><a class="main-links" href="index.html">Home</a></li>
+            <li class="out-menu"><a class="dropdown-arrow main-links">Performance Tasks</a>
+                <ul class="sub-menus">
+                    <li><a class="sub-links" href="page/introduction.html">PT 1 - Intro</a></li>
+                    <li><a class="sub-links" href="page/song.html">PT 2 - Lyrics</a></li>
+                    <li><a class="sub-links" href="page/table.html">PT 3 - Tables</a></li>
+                </ul>
+            </li>
+        <li><a class="main-links" href="index.html">About</a></li>
+        </ul>
     </nav>
-  </div>
+</div>
   <div class="header">
       <h1 class="title">Matthew Flordeliza's Portfolio</h1>
       <p class="subtitle">Final's Exam for Web Development 1</p>
