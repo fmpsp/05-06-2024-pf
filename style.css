@@ -91,6 +91,7 @@ p.subtitle {
 	cursor: pointer;
 	--webkit-touch-callout: none;
 }
+
 .menu-container span {
 	display: block;
 	width: 33px;
@@ -99,10 +100,6 @@ p.subtitle {
 	position: relative;
 	background: var(--color);
 	border-radius: 3px;
-	/* line-height: 45px; */
-	/* text-align: center;
-	position: absolute;
-	left: 35px; */
 	z-index: 1;
   	transform-origin: 4px 0px;
 	transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
@@ -197,25 +194,11 @@ transform: rotate(-45deg) translate(-5px,11px);
 }
 
 @media only screen and (max-width: 767px) { 
-	.navbar {
-	  border-top: var(--border-width) var(--border-style);
-	}
 
 	.menu-container {
 	  padding: 16px 16px 16px 16px;
 	  flex-direction: column;
 	  align-items: flex-end;
-	}
-	
-	.menu-logo {
-	  position: absolute;
-	  left: 0;
-	  top: 50%;
-	  transform: translateY(-50%);
-	}
-  
-	.menu-logo img {
-	  max-height: 30px;
 	}
   
 	.menu {
@@ -225,7 +208,7 @@ transform: rotate(-45deg) translate(-5px,11px);
 	  width: 300px;
 	  right: -310px;
 	  top: 0;
-	  margin: -3px -20px -20px -20px;
+	  margin: -1px -20px -20px -20px;
 	  padding: 30px 15px 15px;
 	  -webkit-font-smoothing: antialiased;
 	  /* to stop flickering of text in safari */
@@ -234,10 +217,13 @@ transform: rotate(-45deg) translate(-5px,11px);
 	  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 	  border: var(--border-width) var(--border-style);
 	}
-  
+	
 	.menu-container input:checked ~ .menu {
 	  transform: translateX(-100%);
 	}
+	.menu-container input:checked ~ .navbar {
+		transition: opacity 0.55s ease;
+	  }
   }
   
   /* desktop styles */
@@ -259,15 +245,6 @@ transform: rotate(-45deg) translate(-5px,11px);
 	  position: relative;
 	  width: 100%;
 	}
-  
-	/* .menu ul {
-	  display: flex;
-	  padding: 0;
-	} */
-/*   
-	.menu li {
-	  padding: 0 20px;
-	} */
   }
 
 /* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
