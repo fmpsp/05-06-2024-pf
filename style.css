@@ -44,7 +44,10 @@ p.subtitle {
 
 .navbar {
 	margin: 1.5%;
-	border: var(--border-width) var(--border-style);
+	border-top: var(--border-width) var(--border-style);
+	border-bottom: var(--border-width) var(--border-style);
+	border-left: var(--border-width) var(--border-style);
+	border-right: var(--border-width) var(--border-style);
 }
 
 .navbar::before {
@@ -93,7 +96,7 @@ p.subtitle {
 	height: 4px;
 	margin-bottom: 5px;
 	position: relative;
-	background: var(--background-color);
+	background: var(--color);
 	border-radius: 3px;
 	/* line-height: 45px; */
 	/* text-align: center;
@@ -161,12 +164,6 @@ transform: rotate(-45deg) translate(-5px,11px);
 	text-decoration: underline;
 }
 
-
-/* .menu-container label:before {
-	font-size: 1.6em;
-	content: "\2261"; 
-	margin-left: 20px;
-} */
 .menu-container ul.sub-menus{
 	padding-inline-start: 0px;
 	padding-inline-end: 0px;
@@ -195,23 +192,14 @@ transform: rotate(-45deg) translate(-5px,11px);
 	color: #797979;
 	text-decoration: none;
 }
-/* @media screen and (max-width: 800px){
-	#menu {position:relative}
-	#menu ul {background:#e8e8e8;position:absolute;top:100%;right:0;left:0;z-index:3;height:auto;display:none;text-align:left;}
-	#menu ul.sub-menus {width:100%;position:static;}
-	#menu ul.sub-menus a {padding-left:30px;}
-	#menu li {display:block;float:none;width:auto;}
-	#menu input, #menu label {position:absolute;top:0;left:0;display:block}
-	#menu input {z-index:4}
-	#menu input:checked + label {color:#000000}
-	#menu input:checked + label:before {content:"\00d7"}
-	#menu input:checked ~ ul {display:block}
-	h1.title {font-size: 30px;}
-	p.subtitle {font-size: 15px;}
-} */
 
 @media only screen and (max-width: 767px) { 
+	.navbar {
+	  border-top: var(--border-width) var(--border-style);
+	}
+
 	.menu-container {
+	  padding: 16px 16px 16px 16px;
 	  flex-direction: column;
 	  align-items: flex-end;
 	}
@@ -228,18 +216,20 @@ transform: rotate(-45deg) translate(-5px,11px);
 	}
   
 	.menu {
+	  background-color: var(--background-color);
 	  position: absolute;
 	  box-sizing: border-box;
 	  width: 300px;
 	  right: -300px;
 	  top: 0;
-	  margin: -20px;
-	  padding: 75px 50px 50px;
+	  margin: -1px -20px -20px -20px;
+	  padding: 30px 15px 15px;
 	  -webkit-font-smoothing: antialiased;
 	  /* to stop flickering of text in safari */
 	  transform-origin: 0% 0%;
 	  transform: translateX(0%);
 	  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+	  border: var(--border-width) var(--border-style);
 	}
   
 	.menu-container input:checked ~ .menu {
