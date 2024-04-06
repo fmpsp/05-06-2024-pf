@@ -14,8 +14,12 @@
 </head>
 <body>
     <div class="navbar">
-        <nav id="menu">
-            <input type="checkbox" id="responsive-menu" on  click="updatemenu()"><label></label>
+        <nav class="menu-container">
+        <input type="checkbox" aria-label="Toggle menu" id="responsive-menu" on  click="updatemenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <div class="menu">
             <ul class="main-menu">
                 <li><a class="main-links" href="../index.html">Home</a></li>
                 <li class="out-menu"><a class="dropdown-arrow main-links">Performance Tasks</a>
@@ -25,9 +29,10 @@
                         <li><a class="sub-links" href="table.html">PT 3 - Tables</a></li>
                     </ul>
                 </li>
-            <li><a class="main-links" href="../index.html">About</a></li>
+                <li><a class="main-links" href="../index.html">About</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
     </div>
     <div class="header">
         <h1 style="font-size: 40px"><b>Between Two Worlds</b></h1> 
