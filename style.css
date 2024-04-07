@@ -44,7 +44,6 @@ p.subtitle {
 }
 
 .navbar {
-	margin: 20px;
 	border-top: var(--border-width) var(--border-style);
 	border-bottom: var(--border-width) var(--border-style);
 	border-left: var(--border-width) var(--border-style);
@@ -94,9 +93,9 @@ p.subtitle {
 
 .menu-container span {
 	display: block;
-	width: 33px;
-	height: 4px;
-	margin-bottom: 5px;
+	width: 25px;
+	height: 2px;
+	margin-bottom: 4px;
 	position: relative;
 	background: var(--color);
 	border-radius: 3px;
@@ -117,7 +116,7 @@ p.subtitle {
 
 .menu-container input:checked ~ span {
 	opacity: 1;
-	transform: rotate(45deg) translate(3px,-1px);
+	transform: rotate(45deg) translate(0px,-1px);
 	background: #232323;
   }
   
@@ -127,18 +126,19 @@ transform: rotate(0deg) scale(0.2, 0.2);
 }
 
 .menu-container input:checked ~ span:nth-child(3) {
-transform: rotate(-45deg) translate(-5px,11px);
+transform: rotate(-45deg) translate(-4px,6px);
 }
 
 
 .menu-container ul, .menu-container li {
-	margin: 0;
+	margin: 0 auto;
+	padding: 0;
 	list-style: none
 }
-.menu-container ul.main-menu {	
-	padding: 8px 12px;
+.menu-container ul.main-menu {
 	text-align: center;
 }
+
 .menu-container li {
 	display: inline-block;
 	position: relative;
@@ -147,12 +147,13 @@ transform: rotate(-45deg) translate(-5px,11px);
 .menu-container a.main-links {
 	cursor: pointer;
 	line-height: 45px;
-	margin: 0 14px;
 }
 
 .menu-container a.sub-links {
+	display: block;
+	line-height: 45px;
 	text-wrap: nowrap;
-	padding: 10px 47px;
+	padding: 0px 38px;
 	margin: 0;
 }
 
@@ -165,14 +166,12 @@ transform: rotate(-45deg) translate(-5px,11px);
 
 .menu-container ul.sub-menus{
 	padding-inline-start: 0px;
-	padding-inline-end: 0px;
 	height: auto;
 	overflow: hidden;
 	background: var(--background-color);
 	position: absolute;
-	z-index: 99;
+	z-index: 99;	
 	display: none;
-	text-decoration: none;
 }
 .menu-container ul.sub-menus li {
 	padding: 0;
@@ -181,12 +180,11 @@ transform: rotate(-45deg) translate(-5px,11px);
 	text-align: left;
 	width: 100%;
 }
-.menu-container ul.sub-menus a {
-	font-size: 12px;
-}
+
 .menu-container li:hover ul.sub-menus {
-	display: block
-}
+	display: block;
+}	
+
 .menu-container ul.sub-menus a:hover{
 	background: var(--background-color-2);
 	color: #797979;
@@ -195,21 +193,40 @@ transform: rotate(-45deg) translate(-5px,11px);
 
 @media only screen and (max-width: 767px) { 
 
+	.navbar {
+	  margin: 20px;
+	  width: max-content;
+	}
+
+	.navbar::before {
+		margin: -10px 4px;
+		content: "Nav";
+	}
+
 	.menu-container {
 	  padding: 16px 16px 16px 16px;
 	  flex-direction: column;
-	  align-items: flex-end;
+	  align-items: flex-start;
 	}
-  
+
+	.menu-container li {
+		width: max-content;
+	}
+
+	.menu-container ul.main-menu {
+		padding: 10px 0 0 20px;
+		text-align: left;
+	}
+
 	.menu {
 	  background-color: var(--background-color);
 	  position: absolute;
 	  box-sizing: border-box;
-	  width: 300px;
-	  right: -310px;
+	  width: 200px;
+	  left: -305px;
 	  top: 0;
 	  margin: -1px -20px -20px -20px;
-	  padding: 30px 15px 15px;
+	  padding: 30px 0 0 0;
 	  -webkit-font-smoothing: antialiased;
 	  /* to stop flickering of text in safari */
 	  transform-origin: 0% 0%;
@@ -219,7 +236,7 @@ transform: rotate(-45deg) translate(-5px,11px);
 	}
 	
 	.menu-container input:checked ~ .menu {
-	  transform: translateX(-100%);
+	  transform: translateX(324px);
 	}
 	.menu-container input:checked ~ .navbar {
 		transition: opacity 0.55s ease;
@@ -228,10 +245,29 @@ transform: rotate(-45deg) translate(-5px,11px);
   
   /* desktop styles */
   @media only screen and (min-width: 768px) { 
+
+	.navbar {
+		margin: 20px;
+	}
+
 	.menu-container {
 	  width: 100%;
 	}
-  
+	
+	.menu-container li {
+		display: inline-block;
+	}
+
+	.menu-container ul.main-menu {
+			
+		padding: 8px 12px;
+		text-align: center;
+	}
+
+	.menu-container a.main-links {
+		margin: 0 14px;
+	}
+
 	.menu-container input {
 	  display: none;
 	}
