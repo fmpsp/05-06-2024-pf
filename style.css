@@ -5,6 +5,12 @@
     --font-weight: 400; /* 200 : 900 */
     --line-height: 1.2;
 
+	--display-card-image: block; /* none | block */
+    --display-coverart-image: none; /* none | block */
+    --display-header-image: none; /* none | block */
+    --display-library-image: block; /* none | block */
+    --display-tracklist-image: none; /* none | block */
+
     --border-radius: 0px;
     --border-width: 1px;
     --border-style: solid;
@@ -29,28 +35,16 @@ body {
 	overflow-x: hidden;
 }
 
+/* Navigation Bar */
 
-.header{
-    margin: 50px;
-    text-align: center;
-}
-
-h1.title {
-	font-size: 40px
-}
-
-p.subtitle {
-	font-size: 20px;
-}
-
-.navbar {
+.nav-bar {
 	border-top: var(--border-width) var(--border-style);
 	border-bottom: var(--border-width) var(--border-style);
 	border-left: var(--border-width) var(--border-style);
 	border-right: var(--border-width) var(--border-style);
 }
 
-.navbar::before {
+.nav-bar::before {
     position: absolute;
     margin: -10px 4px;
     padding: 0 3px;
@@ -193,12 +187,12 @@ transform: rotate(-45deg) translate(-4px,6px);
 
 @media only screen and (max-width: 767px) { 
 
-	.navbar {
+	.nav-bar {
 	  margin: 20px;
 	  width: max-content;
 	}
 
-	.navbar::before {
+	.nav-bar::before {
 		margin: -10px 4px;
 		content: "Nav";
 	}
@@ -238,7 +232,7 @@ transform: rotate(-45deg) translate(-4px,6px);
 	.menu-container input:checked ~ .menu {
 	  transform: translateX(324px);
 	}
-	.menu-container input:checked ~ .navbar {
+	.menu-container input:checked ~ .nav-bar {
 		transition: opacity 0.55s ease;
 	  }
   }
@@ -282,6 +276,40 @@ transform: rotate(-45deg) translate(-4px,6px);
 	  width: 100%;
 	}
   }
+
+#main {
+	height: 100%;
+	position: relative;
+	isolation: isolate;
+	width: 100%;
+	z-index: 0;
+}
+
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.header{
+    margin: 50px;
+    text-align: center;
+}
+
+h1.title {
+	font-size: 40px
+}
+
+p.subtitle {
+	font-size: 20px;
+}
+
+.top-container {
+	--panel-gap: 16px !important;
+}
+
+
 
 /* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
 * {
