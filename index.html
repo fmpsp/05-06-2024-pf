@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" type="image/jpg" href="media/homefav.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
     <div class="main">
         <div class="header">
             <div class="place">
-                <a href="/pagelist.html" class="uwu"> 
+                <a href="pagelist.html" class="uwu"> 
                     <pre id="big-uwu" style="transition: opacity 1s linear 0s;">
                         ███╗   ███╗ █████╗ ████████╗████████╗██╗  ██╗███████╗██╗    ██╗         ██╗ █████╗ ███████╗ ██████╗ ███╗   ██╗    ███╗   ███╗       ███████╗██╗      ██████╗ ██████╗ ██████╗ ███████╗██╗     ██╗███████╗ █████╗ <br>████╗ ████║██╔══██╗╚══██╔══╝╚══██╔══╝██║  ██║██╔════╝██║    ██║         ██║██╔══██╗██╔════╝██╔═══██╗████╗  ██║    ████╗ ████║       ██╔════╝██║     ██╔═══██╗██╔══██╗██╔══██╗██╔════╝██║     ██║╚══███╔╝██╔══██╗
                         ██╔████╔██║███████║   ██║      ██║   ███████║█████╗  ██║ █╗ ██║         ██║███████║███████╗██║   ██║██╔██╗ ██║    ██╔████╔██║       █████╗  ██║     ██║   ██║██████╔╝██║  ██║█████╗  ██║     ██║  ███╔╝ ███████║
@@ -42,7 +42,7 @@
           subTitle.style.opacity = 0;
     
           try {
-            const resp = await fetch(`/matthews/${pickedUwu}.txt`);
+            const resp = await fetch(`matthews/${pickedUwu}.txt`);
             if (!resp.ok) throw null;
             bigUwu.innerText = await resp.text();
           } catch {
