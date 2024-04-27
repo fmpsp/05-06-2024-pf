@@ -179,6 +179,29 @@ th {
   text-align: center;
 }
 
+.portrait {
+  padding: .5rem;
+  border-style: double;
+  border-width: 2px;
+  float: left;
+  margin-right: 2rem;
+}
+
+.face {
+  padding-bottom: 5px;
+  border-bottom: 2px solid white;
+}
+
+figcaption {
+  text-align: center;
+}
+
+.introduction {
+  font-size: 1rem;
+  text-indent: 50px;
+  text-align: justify;
+}
+
 :where(*,:before,:after){box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}
 :where(html){line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,"Apple Color Emoji","Segoe UI Emoji",Segoe UI Symbol,"Noto Color Emoji"}
 :where(body){margin:0;line-height:inherit}
@@ -224,6 +247,21 @@ th {
   }
 }
 
+@media only screen and (max-width: 620px) { 
+  .portrait {
+    float: none;
+    margin: auto;
+    width: 50%;
+  }
+
+  .hello {
+    text-align: center;
+  }
+
+  .introduction {
+    margin-top: 20px;
+  }
+}
 @media only screen and (max-width: 480px) {
   .about-top-name {
     left: 35%;
