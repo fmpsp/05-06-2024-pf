@@ -37,7 +37,7 @@ body {
 	text-align: center;
 }
 
-.big-uwu {
+#big-uwu {
   font-size: 10px;
   font-weight: 900;
 }
@@ -238,7 +238,7 @@ figcaption {
 :where(img,svg,video,canvas,audio,iframe,embed,object){display:block;vertical-align:middle}
 :where(img,video){max-width:100%;height:auto}
 
-@media only screen and (max-width: 768px) { 
+@media only screen and (max-width: 1330px) { 
   #big-uwu {
     font-size: 5px;
   }
@@ -247,7 +247,19 @@ figcaption {
   }
 }
 
+@media only screen and (max-width: 768px) { 
+  #big-uwu {
+    font-size: 4px;
+  }
+  .about-top-name {
+    left: 40%;
+  }
+}
+
 @media only screen and (max-width: 620px) { 
+  #big-uwu {
+    font-size: 3px;
+  }
   .portrait {
     float: none;
     margin: auto;
@@ -263,6 +275,9 @@ figcaption {
   }
 }
 @media only screen and (max-width: 480px) {
+  #big-uwu {
+    font-size: 2px;
+  }
   .about-top-name {
     left: 35%;
   }
@@ -273,6 +288,109 @@ figcaption {
     left: 30%;
   }
 }
+
+@media only screen and (max-width: 760px), (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Force table to not be like tables anymore */
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  /* Hide table headers (but not display: none;, for accessibility) */
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+  tr {
+    margin: 0 0 1rem 0;
+  }
+  tr:nth-child(odd) {
+    background: #000000;
+  }
+  td {
+    /* Behave  like a "row" */
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    position: relative;
+    padding-left: 50%;
+  }
+  td:before {
+    /* Now like a table header */
+    position: absolute;
+    /* Top/left values mimic padding */
+    top: 0;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+  }
+
+  td.son:nth-of-type(1):before {
+    content: "Province";
+  }
+  td.son:nth-of-type(2):before {
+    content: "City/Municipality";
+  }
+  td.son:nth-of-type(3):before {
+    content: "Name";
+  }
+  td.son:nth-of-type(4):before {
+    content: "Sex";
+  }
+  td.son:nth-of-type(5):before {
+    content: "Date of Birth";
+  }
+  td.son:nth-of-type(6):before {
+    content: "Place of Birth";
+  }
+  td.son:nth-of-type(7):before {
+    content: "Type of Birth";
+  }
+  td.son:nth-of-type(8):before {
+    content: "Birth Order";
+  }
+  td.son:nth-of-type(9):before {
+    content: "Weight at Birth";
+  }
+  td.son:nth-of-type(10):before {
+    content: "Arbitrary Data";
+  }
+
+  td.mom:nth-of-type(1):before {
+    content: "Maiden Name";
+  }
+  td.mom:nth-of-type(2):before {
+    content: "Citizenship";
+  }
+  td.mom:nth-of-type(3):before {
+    content: "Religion";
+  }
+  td.mom:nth-of-type(4):before {
+    content: "Occupation";
+  }
+  td.mom:nth-of-type(5):before {
+    content: "Age at Time of Birth";
+  }
+  td.mom:nth-of-type(6):before {
+    content: "Residence";
+  }
+
+  td.dad:nth-of-type(1):before {
+    content: "Name";
+  }
+  td.dad:nth-of-type(2):before {
+    content: "Citizenship";
+  }
+  td.dad:nth-of-type(3):before {
+    content: "Religion";
+  }
+  td.dad:nth-of-type(4):before {
+    content: "Occupation";
+  }
+  td.dad:nth-of-type(5):before {
+    content: "Age at Time of Birth";
+  }
+}
+  /*
 
   /* desktop styles */
 @media only screen and (min-width: 768px) { 
