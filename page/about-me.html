@@ -10,20 +10,51 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;1,300&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <title>about me</title>
 </head>
-<body class="about">
-    <div class="about-outer">
-        <main class="about-inner">
-            <h1 class="hello">Hello!</h1>
-            <figure class="portrait">
-                <img class="face" src="../media/face.png" alt="" style="width: 300px">
-                <figcaption>Matthew Jason M. Flordeliza</figcaption>
-            </figure>
-            <p class="introduction">I am Matthew Jason M. Flordeliza, a 17 year-old ICT student in Theresian School of Cavite.
-                I was born in February 13, 2007. I haven't finished this part yet.</p>
-        </main>
-    </div>
+<body class="about" id="fade">
+    <main class="about-me">
+        <h1 class="hello">Hello!</h1>
+        <figure class="portrait">
+            <img class="face" src="../media/face.png" alt="" style="width: 300px">
+            <figcaption>Matthew Jason M. Flordeliza</figcaption>
+        </figure>
+        <p class="introduction">I am Matthew Jason M. Flordeliza, a 17 year-old ICT student in Theresian School of Cavite.
+            I was born in February 13, 2007.</p>
+        <br>
+        <p><span class="b-points">Accomplishments:</span></p>
+        <ul class="accomp">
+            <li>Finishing 1st to 10th Grade Education</li>
+            <li>Consistent Honors Student</li>
+            <li>CavPUSO ISpell 2020 Bronze Medalist</li>
+            <li>BCOPS Sciencefest Quiz Bee 2017 3rd Placer</li>
+            <li>BCOPS Sciencefest Quiz Bee 2018 1st Placer</li>
+        </ul>
+        <br>
+        <p><span class="b-points">Skills:</span></p>
+        <ul class="accomp">
+            <li>English Fluency</li>
+            <li>Photo Editing</li>
+            <li>Video Editing</li>
+            <li>C++ Programming</li>
+            <li>HTML, CSS, JS Stack Knowledge</li>
+        </ul>
+        <br>
+        <p><span class="b-points">Hobbies:</span></p>
+        <ul class="accomp">
+            <li>Playing Guitar</li>
+            <li>Playing Rhythm Games</li>
+            <li>Reading Novels</li>
+            <li>Watching Animated Shows</li>
+            <li>Coding</li>
+        </ul>
+    </main>
     <span class="about-top-name"><a href="../index.html"  style="text-align: center;">FLORDELIZA</a></span>
+    <script>
+        $(document).ready(function(){
+            $("#fade").fadeIn(2000);
+        });
+    </script>
 </body>
 </html>
