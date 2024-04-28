@@ -10,86 +10,95 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,300;1,300&amp;family=IBM+Plex+Sans:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <title>PSA Birth Certificate</title>
 </head>
 <body>
-    <div class="outer">
-        <div class="pt" style="overflow-x: auto;">
-            <a class="return" href="index-performance-tasks.html">back to /performance tasks</a>
-            <h1 class="pt3h1">Certificate of Live Birth</h1>
-            <table>
-            <thead>
-                <tr>
-                    <th>Province</th>
-                    <th>City/Municipality</th>
-                    <th>Name</th>
-                    <th>Sex</th>
-                    <th>Date of Birth</th>
-                    <th>Place of Birth</th>
-                    <th>Type of Birth</th>
-                    <th>Birth Order</th>
-                    <th>Weight at Birth</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="son">Cavite</td>
-                    <td class="son">Kawit</td>
-                    <td class="son">Matthew Jason Manalo Flordeliza</td>
-                    <td class="son">Male</td>
-                    <td class="son">13 February 2007</td>
-                    <td class="son">Clinica Avancena Balsahan Binakayan, Kawit, Cavite</td>
-                    <td class="son">Single</td>
-                    <td class="son">Second</td>
-                    <td class="son">3,600.39 grams</td>
-                </tr>
-            </tbody>
-            <thead>
-                <tr>
-                    <th>Maiden Name</th>
-                    <th>Citizenship</th>
-                    <th>Religion</th>
-                    <th>Occupation</th>
-                    <th>Age at Time of Birth</th>
-                    <th>Residence</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="mom">Maida Casugbo Manalo</td>
-                    <td class="mom">Filipino</td>
-                    <td class="mom">Catholic</td>
-                    <td class="mom">Housewife</td>
-                    <td class="mom">30</td>
-                    <td class="mom">Baytown Vill Habay I, Bacoor, Cavite</td>
-                </tr>
-            </tbody>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Citizenship</th>
-                    <th>Religion</th>
-                    <th>Occupation</th>
-                    <th>Age at Time of Birth</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="dad">Gary Uy Flordeliza</td>
-                    <td class="dad">Filipino</td>
-                    <td class="dad">Catholic</td>
-                    <td class="dad">Seafarer</td>
-                    <td class="dad">31</td>
-                </tr>
-            </tbody>
-        </table>
-        <table class="mother">
-            
-        </table>
-        <table class="mother">
-            
-        </table>
+    <div id="fade">
+        <div class="outer">
+            <div class="pt" style="overflow-x: auto;">
+                <a class="return" href="index-performance-tasks.html">back to /performance tasks</a>
+                <h1 class="pt3h1">Certificate of Live Birth</h1>
+                <table>
+                <thead>
+                    <tr>
+                        <th>Province</th>
+                        <th>City/Municipality</th>
+                        <th>Name</th>
+                        <th>Sex</th>
+                        <th>Date of Birth</th>
+                        <th>Place of Birth</th>
+                        <th>Type of Birth</th>
+                        <th>Birth Order</th>
+                        <th>Weight at Birth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="son">Cavite</td>
+                        <td class="son">Kawit</td>
+                        <td class="son">Matthew Jason Manalo Flordeliza</td>
+                        <td class="son">Male</td>
+                        <td class="son">13 February 2007</td>
+                        <td class="son">Clinica Avancena Balsahan Binakayan, Kawit, Cavite</td>
+                        <td class="son">Single</td>
+                        <td class="son">Second</td>
+                        <td class="son">3,600.39 grams</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Maiden Name</th>
+                        <th>Citizenship</th>
+                        <th>Religion</th>
+                        <th>Occupation</th>
+                        <th>Age at Time of Birth</th>
+                        <th>Residence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="mom">Maida Casugbo Manalo</td>
+                        <td class="mom">Filipino</td>
+                        <td class="mom">Catholic</td>
+                        <td class="mom">Housewife</td>
+                        <td class="mom">30</td>
+                        <td class="mom">Baytown Vill Habay I, Bacoor, Cavite</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Citizenship</th>
+                        <th>Religion</th>
+                        <th>Occupation</th>
+                        <th>Age at Time of Birth</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="dad">Gary Uy Flordeliza</td>
+                        <td class="dad">Filipino</td>
+                        <td class="dad">Catholic</td>
+                        <td class="dad">Seafarer</td>
+                        <td class="dad">31</td>
+                    </tr>
+                </tbody>
+            </table>
+            <table class="mother">
+        
+            </table>
+            <table class="mother">
+        
+            </table>
+            </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function(){
+        $('#fade').fadeIn(2000);
+        }); 
+    </script>
 </body>
 </html>
