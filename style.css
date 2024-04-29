@@ -412,7 +412,7 @@ figcaption {
 /* Firefox (uncomment to work in Firefox, although other properties will not work!)  */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #828282 #EDEDED;
+  scrollbar-color: #828282 var(--background-color);
 }
 
 /* Chrome, Edge and Safari */
@@ -422,20 +422,20 @@ figcaption {
   }
   *::-webkit-scrollbar-track {
 	border-radius: 9px;
-	background-color: #EDEDED;
+	background-color: var(--background-color);
   }
   
   *::-webkit-scrollbar-track:hover {
-	background-color: #EDEDED;
+	background-color: var(--background-color);
   }
   
   *::-webkit-scrollbar-track:active {
-	background-color: #EDEDED;
+	background-color: var(--background-color);
   }
   
   *::-webkit-scrollbar-thumb {
 	border-radius: 5px;
-	background-color: #828282;
+	background-color: #e8e8e8;
   }
   
   *::-webkit-scrollbar-thumb:hover {

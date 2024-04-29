@@ -19,7 +19,7 @@
             <main class="about-me">
                 <h1 class="hello">Hello!</h1>
                 <figure class="portrait">
-                    <img class="face" src="../media/face.png" alt="" style="width: 300px">
+                    <img  onload="fadeItIn()" class="face" src="../media/face.png" alt="" style="width: 300px">
                     <figcaption>Matthew Jason M. Flordeliza</figcaption>
                 </figure>
                 <p class="introduction">I am Matthew Jason M. Flordeliza, a 17 year-old ICT student in Theresian School of Cavite.
@@ -55,9 +55,9 @@
             <span class="about-top-name"><a href="../index.html"  style="text-align: center;">FLORDELIZA</a></span>
         </div>  
         <script>
-            $(document).ready(function(){
+            function fadeItIn(){
             $('#fade').fadeIn(2000);
-            }); 
+            }; 
         </script>
     </body>
 </html>

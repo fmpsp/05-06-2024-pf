@@ -1,17 +1,24 @@
 let progress = document.getElementById("progress");
 let volume_slider = document.getElementById("volume_slider");
+let volume_percent = document.getElementById("volume-percent");
+let volume_icon = document.getElementById("volume-icon");
 let song = document.getElementById("song");
 let ctrlIcon = document.getElementById("ctrlIcon");
 let curr_time = document.querySelector('.current-time');
 let total_duration = document.querySelector('.total-duration');
+let fill = document.getElementById("progress-fill");
+
+
 
 song.onloadedmetadata = function(){
+    song.pause();
     curr_time.textContent = "0:00";
     total_duration.textContent = "0:00";
     progress.max = song.duration;
     progress.value = song.currentTime;
     volume_slider.value = song.volume
 }
+
 
 function playPause(){
     if(ctrlIcon.classList.contains("fa-pause")){
@@ -37,7 +44,7 @@ function backward(){
 }
 
 function forward(){
-    progress.value = 300;
+    progress.value = song.duration;
     song.currentTime = progress.value;
     if(ctrlIcon.classList.contains("fa-pause")){
         song.pause();
@@ -46,15 +53,12 @@ function forward(){
     }
 }
 
-function setVolume(){
-    song.volume = volume_slider.value/100;
-}
-
 if(song.play()){
     setInterval(()=>{
         progress.value = song.currentTime;
         setUpdate();
-    },500);
+        // console.log(song.currentTime);
+    },200);
 }
 
 progress.onchange = function(){
@@ -63,6 +67,30 @@ progress.onchange = function(){
     ctrlIcon.classList.add("fa-pause");
     ctrlIcon.classList.remove("fa-play");
 }
+
+volume_slider.oninput = function() {
+    let vpercentage = Math.floor(volume_slider.value * 100);
+    song.volume = volume_slider.value;
+    console.log(volume_percent.innerText);
+    volume_percent.innerHTML = vpercentage + "%";
+
+    if (vpercentage > 50){
+        volume_icon.classList.remove("fa-volume-low")
+        volume_icon.classList.remove("fa-volume-off")
+        volume_icon.classList.add("fa-volume-high")
+    }
+    else if (vpercentage > 1){
+        volume_icon.classList.remove("fa-volume-off")
+        volume_icon.classList.remove("fa-volume-high")
+        volume_icon.classList.add("fa-volume-low")
+    }
+    else{
+        volume_icon.classList.remove("fa-volume-low")
+        volume_icon.classList.remove("fa-volume-high")
+        volume_icon.classList.add("fa-volume-off")
+    }
+  } 
+
 
 function setUpdate(){
     if(!isNaN(song.duration)){
@@ -79,5 +107,9 @@ function setUpdate(){
 
         curr_time.textContent = currentMinutes + ":" + currentSeconds;
         total_duration.textContent = durationMinutes + ":" + durationSeconds;
+
+        
+        var songPercentage = (song.currentTime / song.duration) * 100;
+        fill.style.setProperty('--progress-bar-transform', songPercentage + "%");
     }
 }
