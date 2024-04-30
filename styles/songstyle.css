@@ -131,6 +131,10 @@ body {
     margin-inline-start: 16px;
 }
 
+.box div {
+    overflow: hidden;
+}
+
 .lyrics-outer {
     border: 4px double var(--border-color);
     height: 100%;
@@ -474,6 +478,14 @@ i.back {
     min-width: 45px;
 }
 
+.returntopt {
+    width: 32px;
+    height: 32px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
 .volume-button {
     background-color: transparent;
     border: none;
@@ -549,6 +561,10 @@ i.back {
     width: 80%; 
 }
 
+.volume-percent {
+    display: none;
+    }
+
 }
 
 @media (max-width: 450px) {
@@ -561,12 +577,9 @@ i.back {
     }
 
     .volume_slider {
-        width: 80px;
+        width: 60px;
     }
     
-    .volume-percent {
-    display: none;
-    }
 
     .progress-container {
         width: 65%; 
