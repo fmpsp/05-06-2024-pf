@@ -23,13 +23,25 @@ body {
     background-color: var(--background-color);
 }
 
+.main-front {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('media/omoribgname.png');
+  background-size: cover;
+}
+
 .main {
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-size: cover;
 }
+
 
 #fade {
   display: none;
@@ -40,16 +52,19 @@ body {
 
 .header {
 	text-align: center;
+  z-index: 2;
 }
 
 #big-uwu {
   font-size: .5vw;
   font-weight: 900;
+  background-color: #000000;
 }
 
 .subtitle {
   margin-top: 10px;
 	font-size: 1vw;
+  background-color: #000000;
 }
 
 /* page index */
@@ -59,6 +74,7 @@ body {
   padding: 1.5rem;
   border-width: 4px;
   border-style: double;
+  background-color: var(--background-color);
 }
 
 .indice {
@@ -80,6 +96,10 @@ body {
 }
 
 /* art index */
+
+.m {
+
+}
 
 .list img {
   height: 20%;
@@ -105,18 +125,11 @@ body {
   padding: 1rem;
   border-width: 4px;
   border-style: double;
+  background-color: var(--background-color);
 }
 
 .h1 {
   font-size: 2rem;
-}
-
-.outer {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 /* performance-task-3 */
@@ -163,6 +176,7 @@ th {
   border-style: double;
   height: 98vh;
   overflow: auto;
+  background-color: var(--background-color);
 }
 
 .about { 

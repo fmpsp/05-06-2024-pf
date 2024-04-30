@@ -76,6 +76,7 @@ body {
     /* width: 400px; */
     width: 40vw;
     z-index: 4;
+    background-color: var(--background-color);
 }
 
 .library {
@@ -137,6 +138,7 @@ body {
 
 .lyrics-outer {
     border: 4px double var(--border-color);
+    background-color: var(--background-color);
     height: 100%;
     overflow: scroll;
 }
