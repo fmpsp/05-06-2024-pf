@@ -69,28 +69,51 @@ progress.onchange = function(){
 }
 
 volume_slider.oninput = function() {
-    let vpercentage = Math.floor(volume_slider.value * 100);
     song.volume = volume_slider.value;
-    console.log(volume_percent.innerText);
-    volume_percent.innerHTML = vpercentage + "%";
-
-    if (vpercentage > 50){
-        volume_icon.classList.remove("fa-volume-low")
-        volume_icon.classList.remove("fa-volume-off")
-        volume_icon.classList.add("fa-volume-high")
-    }
-    else if (vpercentage > 1){
-        volume_icon.classList.remove("fa-volume-off")
-        volume_icon.classList.remove("fa-volume-high")
-        volume_icon.classList.add("fa-volume-low")
-    }
-    else{
-        volume_icon.classList.remove("fa-volume-low")
-        volume_icon.classList.remove("fa-volume-high")
-        volume_icon.classList.add("fa-volume-off")
-    }
+    checkVolume();
   } 
 
+  function checkVolume() {
+    let vpercentage = Math.floor(volume_slider.value * 100);
+    volume_percent.innerHTML = vpercentage + "%";
+    if (vpercentage > 50){
+        volume_icon.classList.remove("fa-volume-low");
+        volume_icon.classList.remove("fa-volume-off");
+        volume_icon.classList.remove("fa-volume-xmark");
+        volume_icon.classList.add("fa-volume-high");
+    }
+    else if (vpercentage > 1){
+        volume_icon.classList.remove("fa-volume-off");
+        volume_icon.classList.remove("fa-volume-high");
+        volume_icon.classList.remove("fa-volume-xmark");
+        volume_icon.classList.add("fa-volume-low");
+    }
+    else{
+        volume_icon.classList.remove("fa-volume-low");
+        volume_icon.classList.remove("fa-volume-high");
+        volume_icon.classList.remove("fa-volume-xmark");
+        volume_icon.classList.add("fa-volume-off");
+    }
+    
+  }
+
+  function volumeToggle() {
+    let preSongVolume = volume_slider.value;
+    if(volume_icon.classList.contains("fa-volume-high") || volume_icon.classList.contains("fa-volume-low") || volume_icon.classList.contains("fa-volume-off")){
+        volume_slider.value = 0;
+        song.volume = volume_slider.value;
+        volume_icon.classList.remove("fa-volume-high");
+        volume_icon.classList.remove("fa-volume-low");
+        volume_icon.classList.remove("fa-volume-off");
+        volume_icon.classList.add("fa-volume-xmark");
+        volume_percent.innerHTML = "0%";
+    }
+    else if (volume_icon.classList.contains("fa-volume-xmark")){
+        volume_slider.value = 0.15;
+        song.volume = volume_slider.value;
+        checkVolume();
+    }
+  }
 
 function setUpdate(){
     if(!isNaN(song.duration)){
