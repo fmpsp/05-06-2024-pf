@@ -20,7 +20,7 @@ body {
     vertical-align: baseline;
     background-color: var(--background-color);
     overscroll-behavior: none;
-    user-select: none;
+    /* user-select: none; */
     
     display: flex;
     height: 100%;
@@ -64,7 +64,7 @@ body {
 
 .library {
     gap: 16px;
-    overflow: visible;
+    /* overflow: visible; */
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -86,12 +86,12 @@ body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     flex-direction: column;
-    user-select: none;
+    /* user-select: none; */
     min-height: 0;
     -webkit-box-flex: 1;
     flex: 1;
     border: 4px double var(--border-color);
-    cursor: default;
+    /* cursor: default; */
 }
 
 .library::before {
@@ -104,21 +104,31 @@ body {
 }
 
 .list-over {
+    height: 100%;
     position: relative;
+    overflow: scroll;
 }
 
-.list {
-    transform: translateY(0px);
+.song-list {
+    transform: translateY(15px);
 }
 
-.list li {
+.song-list li {
     contain: layout style;
-    user-select: none;
+    /* user-select: none; */
 
+}
+
+.song-list li:hover {
+    background-color: rgb(2,2,2);
+    font-weight: 1000;
+    color: rgb(0,0,0);
+    text-decoration: underline;
+    cursor:pointer;
 }
 
 .box {
-    grid-template-rows: 24px !important;
+    grid-template-rows: 48px !important;
     min-block-size: auto;
     padding: 4px 18px;
 
@@ -130,10 +140,54 @@ body {
     box-sizing: border-box;
     position: relative;
     margin-inline-start: 16px;
+    color: inherit;
 }
 
 .box div {
     overflow: hidden;
+}
+
+.button {
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+
+    background-color: transparent;
+    border:none;
+    width: 100%;
+}
+
+.image-sidearea {
+    grid-column: 1;
+}
+
+.image-sidearea-container {
+    display: flex;
+    gap: 12px, 12px;
+    align-items: center;
+    height: 100%;
+}
+
+.list-image {
+    border: 2px solid var(--border-color);
+    width: 48px;
+    height: 48px;
+}
+
+.header-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px, 12px;
+    grid-column-end: -1;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+    color: inherit;
 }
 
 .lyrics-outer {
@@ -209,7 +263,7 @@ pre {
     -webkit-box-direction: normal;
     flex-direction: column;
     height: auto;
-    user-select: none;
+    /* user-select: none; */
 }
 
 .music-player {
@@ -547,6 +601,9 @@ i.back {
     }
     .volume_slider {
         width: 80px;
+    }
+    .song-bar, .other-features, .volume-container {
+        min-width: none;
     }
 }
 
