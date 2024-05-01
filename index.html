@@ -25,12 +25,19 @@
             <div class="header">
                 <div class="place">
                     <a href="page/about-me.html" class="uwu">
-                        <pre id="big-uwu" style="transition: opacity 1s linear 0s;">
+                        <pre id="big-uwu" class="big-uwu" style="transition: opacity 1s linear 0s;">
                             ███╗   ███╗ █████╗ ████████╗████████╗██╗  ██╗███████╗██╗    ██╗         ██╗ █████╗ ███████╗ ██████╗ ███╗   ██╗    ███╗   ███╗       ███████╗██╗      ██████╗ ██████╗ ██████╗ ███████╗██╗     ██╗███████╗ █████╗ <br>████╗ ████║██╔══██╗╚══██╔══╝╚══██╔══╝██║  ██║██╔════╝██║    ██║         ██║██╔══██╗██╔════╝██╔═══██╗████╗  ██║    ████╗ ████║       ██╔════╝██║     ██╔═══██╗██╔══██╗██╔══██╗██╔════╝██║     ██║╚══███╔╝██╔══██╗
                             ██╔████╔██║███████║   ██║      ██║   ███████║█████╗  ██║ █╗ ██║         ██║███████║███████╗██║   ██║██╔██╗ ██║    ██╔████╔██║       █████╗  ██║     ██║   ██║██████╔╝██║  ██║█████╗  ██║     ██║  ███╔╝ ███████║
                             ██║╚██╔╝██║██╔══██║   ██║      ██║   ██╔══██║██╔══╝  ██║███╗██║    ██   ██║██╔══██║╚════██║██║   ██║██║╚██╗██║    ██║╚██╔╝██║       ██╔══╝  ██║     ██║   ██║██╔══██╗██║  ██║██╔══╝  ██║     ██║ ███╔╝  ██╔══██║
                             ██║ ╚═╝ ██║██║  ██║   ██║      ██║   ██║  ██║███████╗╚███╔███╔╝    ╚█████╔╝██║  ██║███████║╚██████╔╝██║ ╚████║    ██║ ╚═╝ ██║██╗    ██║     ███████╗╚██████╔╝██║  ██║██████╔╝███████╗███████╗██║███████╗██║  ██║
                             ╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝╚══════╝ ╚══╝╚══╝      ╚════╝ ╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝    ╚═╝     ╚═╝╚═╝    ╚═╝     ╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝╚═╝╚══════╝╚═╝  ╚═╝</pre>
+                            <pre id="small-uwu" class="small-uwu" style="transition: opacity 1s linear 0s;">
+███╗░░░███╗███████╗
+████╗░████║██╔════╝
+██╔████╔██║█████╗░░
+██║╚██╔╝██║██╔══╝░░
+██║░╚═╝░██║██║░░░░░
+╚═╝░░░░░╚═╝╚═╝░░░░░</pre>
                     </a>
                 </div>
                 <p class="subtitle" id="subtitle" style="transition: opacity 1s linear 0s">portfolio for web development 1 final's examination</p>
@@ -45,9 +52,11 @@
     
           const pickedUwu = Math.floor(Math.random() * uwuCount);
           const bigUwu = document.getElementById("big-uwu");
+          const smallUwu = document.getElementById("small-uwu");
           const subTitle = document.getElementById("subtitle");
     
           bigUwu.style.opacity = 0;
+          smallUwu.style.opacity = 0;
           subTitle.style.opacity = 0;
     
           try {
@@ -57,9 +66,19 @@
           } catch {
             bigUwu.innerHTML = bigUwu.textContent;
           }
+
+          try {
+            const resp = await fetch(`matthews/small/${pickedUwu}.txt`);
+            if (!resp.ok) throw null;
+            smallUwu.innerText = await resp.text();
+          } catch {
+            smallUwu.innerHTML = smallUwu.textContent;
+          }
     
           bigUwu.style.transition = "opacity 1s linear";
           bigUwu.style.opacity = "";
+          smallUwu.style.transition = "opacity 1s linear";
+          smallUwu.style.opacity = "";
           subTitle.style.opacity = "";
         })()})();
     </script>
