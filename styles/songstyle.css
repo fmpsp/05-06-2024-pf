@@ -116,7 +116,7 @@ body {
 }
 
 .song-list {
-    transform: translateY(15px);
+    transform: translateY(16px);
     overflow: auto;
     flex-grow: 1;
 }
