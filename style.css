@@ -191,7 +191,7 @@ th {
 .about-top-name {
   left: 0;
   right: 0;
-  margin: -10px;
+  margin-top: -10px;
   position: absolute;
   text-wrap: nowrap;
   text-align: center;
