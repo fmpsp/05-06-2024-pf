@@ -1,14 +1,102 @@
 let progress = document.getElementById("progress");
+let fill = document.getElementById("progress-fill");
+
 let volume_slider = document.getElementById("volume_slider");
 let volume_percent = document.getElementById("volume-percent");
 let volume_icon = document.getElementById("volume-icon");
+
 let song = document.getElementById("song");
 let ctrlIcon = document.getElementById("ctrlIcon");
+
 let curr_time = document.querySelector('.current-time');
 let total_duration = document.querySelector('.total-duration');
-let fill = document.getElementById("progress-fill");
+
+let cover = document.getElementById("track-image");
+let songTitle = document.getElementById("track-title");
+let songArtist = document.getElementById("track-artist");
 
 
+const music_list = [
+    {
+        img: '../media/songs/covers/betweentwoworlds.jpg',
+        name: 'Between Two Worlds',
+        artist: 'Mili',
+        music: '../media/songs/betweentwoworlds.ogg'
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    },
+    
+    {
+        img: '',
+        name: '',
+        artist: '',
+        music: ''
+    }
+];
 
 song.onloadedmetadata = function(){
     song.pause();
