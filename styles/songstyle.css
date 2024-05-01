@@ -119,12 +119,14 @@ body {
 
 }
 
-.song-list li:hover {
-    background-color: rgb(2,2,2);
-    font-weight: 1000;
-    color: rgb(0,0,0);
+.song-list li:hover *{
+    font-weight: 900;
     text-decoration: underline;
     cursor:pointer;
+}
+
+.box:hover img {
+    opacity: 0.8;
 }
 
 .box {
@@ -140,6 +142,7 @@ body {
     box-sizing: border-box;
     position: relative;
     margin-inline-start: 16px;
+    margin-inline-end: 16px;
     color: inherit;
 }
 
@@ -209,7 +212,7 @@ body {
 .lyrics {
     margin-top: 5%;
     font-size: 12px;
-    padding-bottom: 120px;
+    margin-bottom: 5%;
     columns: 35em 3;
     -webkit-columns: 35em 3;
     -moz-columns: 35em 3;
