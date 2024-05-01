@@ -116,7 +116,7 @@ body {
 }
 
 .song-list {
-    transform: translateY(15.5px);
+    transform: translateY(15px);
     overflow: auto;
     flex-grow: 1;
 }
@@ -607,6 +607,10 @@ i.back {
 }
 
 @media (max-width: 610px) {
+
+    .song-list {
+        transform: translateY(0px);
+    }
 
     .box {
         grid-template-rows: 28px ;
