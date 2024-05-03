@@ -1,0 +1,1 @@
+These files are used for the home page of the website. The small variations are for mobile screens.
