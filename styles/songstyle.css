@@ -1,4 +1,4 @@
-
+/* TODO stack songlist and lyrics grids on low width screens */
 
 * {
     box-sizing: border-box;
@@ -11,6 +11,7 @@
     --secondary-color: #606060;
     --green-color: #2d5;
     --padding: 1em; 
+    --slider-background: rgb(178, 178, 178);
 }
 
 body {
@@ -20,13 +21,9 @@ body {
     vertical-align: baseline;
     background-color: var(--background-color);
     overscroll-behavior: none;
-    /* user-select: none; */
-    
     display: flex;
     height: 100%;
     line-height: normal;
-    /* min-height: 600px;
-    min-width: 800px; */
     width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -76,7 +73,6 @@ body {
 
     grid-area: left-sidebar;
     position: relative;
-    /* width: 400px; */
     width: 40vw;
     z-index: 4;
     background-color: var(--background-color);
@@ -128,6 +124,7 @@ body {
 }
 
 #unordered-song-list {
+    
     inset: 10px;
     height: 100vh;
 }
@@ -213,7 +210,7 @@ body {
     margin: -10px 4px;
     background: var(--background-color);
     padding: 0 3px;
-    z-index: 9;
+    z-index: 5;
 }
 
 .lyrics {
@@ -480,6 +477,7 @@ i.back {
     position: absolute;
     top: 50%;
     transform: translateY(-70%);
+    background-color: var(--slider-background);
 }
 
 .sliderarea {
@@ -601,27 +599,62 @@ i.back {
 }
 
 @media (max-width: 690px) {
+
+    .progressbarbg {
+        width: 100%;
+    }
     .image-sidearea {
         display: none;
     }
-}
 
-@media (max-width: 610px) {
-
-    .song-list {
-        transform: translateY(0px);
+    .header-area {
+        grid-column-end:unset;
     }
 
+    
     .box {
-        grid-template-rows: 28px ;
+        margin-top: 10px;
+        grid-template-columns: unset;
+        grid-template-rows: 27px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+
+    .button {
+        margin-top: 5px;
+        height: 100%;
     }
 
     .header-area {
         margin-top: 26px;
         margin-bottom: 26px;
-        position: absolute;
         z-index:-1;
     }
+
+    .top-container {
+        grid-template-areas: unset;
+        grid-template-columns: unset;
+        height: unset;
+        min-height: unset;
+    }
+
+    .nav-bar {
+        height: 100%;
+    }
+
+    .library {
+        width: 100%;
+    }
+
+    
+    .song-list {
+        transform: translateY(0px);
+    }
+}
+
+@media (max-width: 610px) {
+
 
     .back, .front, .und, .artist:active   {
         display: none;
@@ -634,31 +667,31 @@ i.back {
     .volume_slider {
         width: 80px;
     }
-    .song-bar, .other-features, .volume-container {
+    .song-bar, .other-features, .volume-container, .volume-button, .volume-percent, .current-time {
         min-width: none;
     }
 }
 
-@media (max-width: 480px) {
-.back, .front, .und, .random  {
-    display: none;
-}
+@media (max-width: 485px) {
 
-.volume_slider {
-    width: 80px;
-}
-
-.progress-container {
-    width: 80%; 
-}
-
-.volume-percent {
-    display: none;
+    .image-container {
+        display: none;
+        }
+    .volume_slider {
+        width: 80px;
     }
+    .volume-percent {
+        display: none;
+        }
 
+    .song-bar, .volume-container, .other-features {
+        min-width: unset;
+    }
 }
 
 @media (max-width: 450px) {
+
+
     .back, .front, .und, .random  {
         display: none;
     }
@@ -670,31 +703,31 @@ i.back {
     .volume_slider {
         width: 60px;
     }
-    
-
-    .progress-container {
-        width: 65%; 
-    }
-
-    .image-container {
-    display: none;
-    }
 
     .music-player-container {
         align-items: center;
-        height: 16vh;
     }
     .music-player {
     width: 100%;
-    /* height: 13vh; */
     }
 
     .spotify-placeholder {
     height: 105px;
     }
 
-    .song-bar, .volume-container, .other-features {
-        min-width: 0;
+    .column {
+        text-wrap:stable;
+        overflow: hidden;
+    }
+
+    
+
+    .box {
+        margin-top: 10px;
+        grid-template-columns: unset;
+        grid-template-rows: 63px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
     }
 
 }
@@ -705,13 +738,12 @@ i.back {
     }
 
     .volume_slider {
-        width: 25vw;
+        display: none;
     }
 }
 
-@media (max-width: 450px) and (min-height: 500px) {
-    .music-player-container {
-        align-items: center;
-        height: auto;
+@media (max-width: 300px) {
+    .progress-container {
+        width: 90%;
     }
 }

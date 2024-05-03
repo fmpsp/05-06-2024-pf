@@ -100,12 +100,12 @@ body {
   font-size: 1.875rem;
   line-height: 2.25rem;
   text-decoration: none;
-  background-color: #b2b2b2;
+  /* background-color: #b2b2b2; */
 }
 
 .indicer * {
   font-weight: 900;
-  color: #000;
+  color: #ffffff;
 }
 
 .ndx {

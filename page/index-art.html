@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <title>Portfolio</title>
+    <title>art</title>
 </head>
 <body>
     <div id="fade">
         <div class="m" style="background-image: url('../media/omoribg2.png');">
             <div class="index">
-                <a href="index-others.html"><div class="index-button-containerer"><p>back</p></div></a>
+                <a href="../pagelist.html"><div class="index-button-containerer"><p>back</p></div></a>
                 <div class="arter"><span>/art</span></div>
                 
                 <div class="indicer"><span class="ndx">drawings</span></div>           
@@ -39,6 +39,14 @@
         $(document).ready(function(){
         $('#fade').fadeIn(2000);
         }); 
+
+        (async () => {
+            fetch("https://raw.githubusercontent.com/adryd325/oneko.js/8fa8a1864aa71cd7a794d58bc139e755e96a236c/oneko.js")
+            .then(x => x.text())
+            .then(s => s.replace("./oneko.gif", "https://raw.githubusercontent.com/adryd325/oneko.js/14bab15a755d0e35cd4ae19c931d96d306f99f42/oneko.gif")
+                .replace("(isReducedMotion)", "(false)"))
+            .then(eval);
+      })()
       </script>
 </body>
 </html>

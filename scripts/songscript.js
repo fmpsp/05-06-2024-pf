@@ -1,3 +1,7 @@
+// TODO
+// [ ] Make variables for directories
+// [ ] Dynamically change height of song-list based on number of lists
+
 let progress = document.getElementById("progress");
 let fill = document.getElementById("progress-fill");
 
@@ -26,98 +30,102 @@ let isPlaying = false;
 let isRandom = false;
 let updateTimer;
 
+let imgDir = '../media/songs/covers/';
+let musicDir = '../media/songs/';
+let lyricsDir = '../media/songs/lyrics/';
+
 const music_list = [
     {
-        img: '../media/songs/covers/betweentwoworlds.jpg',
+        img: 'betweentwoworlds.jpg',
         name: 'Between Two Worlds',
         artist: 'Mili',
-        music: '../media/songs/betweentwoworlds.ogg',
-        lyrics: '../media/songs/lyrics/betweentwoworlds.txt'
+        music: 'betweentwoworlds.ogg',
+        lyrics: 'betweentwoworlds.txt'
     },
     {
-        img: '../media/songs/covers/millenniummother.jpg',
+        img: 'millenniummother.jpg',
         name: 'Every Other Ghost',
         artist: 'Mili',
-        music: '../media/songs/everyotherghost.ogg',
-        lyrics: '../media/songs/lyrics/everyotherghost.txt'
+        music: 'everyotherghost.ogg',
+        lyrics: 'everyotherghost.txt'
     },
     {
-        img: '../media/songs/covers/millenniummother.jpg',
+        img: 'millenniummother.jpg',
         name: 'Excαlibur',
         artist: 'Mili',
-        music: '../media/songs/excalibur.ogg',
-        lyrics: '../media/songs/lyrics/excalibur.txt'
+        music: 'excalibur.ogg',
+        lyrics: 'excalibur.txt'
     },
     {
-        img: '../media/songs/covers/millenniummother.jpg',
+        img: 'millenniummother.jpg',
         name: 'Lemonade',
         artist: 'Mili',
-        music: '../media/songs/lemonade.ogg',
-        lyrics: '../media/songs/lyrics/lemonade.txt'
+        music: 'lemonade.ogg',
+        lyrics: 'lemonade.txt'
     },
     {
-        img: '../media/songs/covers/millenniummother.jpg',
+        img: 'millenniummother.jpg',
         name: 'world.search(you)',
         artist: 'Mili',
-        music: '../media/songs/worldsearchyou.ogg',
-        lyrics: '../media/songs/lyrics/worldsearchyou.txt'
+        music: 'worldsearchyou.ogg',
+        lyrics: 'worldsearchyou.txt'
     },
     {
-        img: '../media/songs/covers/millenniummother.jpg',
+        img: 'millenniummother.jpg',
         name: 'Summoning 101',
         artist: 'Mili',
-        music: '../media/songs/summoning101.ogg',
-        lyrics: '../media/songs/lyrics/summoning101.txt'
+        music: 'summoning101.ogg',
+        lyrics: 'summoning101.txt'
     },
     {
-        img: '../media/songs/covers/miraclemilk.jpg',
+        img: 'miraclemilk.jpg',
         name: 'Bathtub Mermaid',
         artist: 'Mili',
-        music: '../media/songs/bathtubmermaid.ogg',
-        lyrics: '../media/songs/lyrics/bathtubmermaid.txt'
+        music: 'bathtubmermaid.ogg',
+        lyrics: 'bathtubmermaid.txt'
     },
     {
-        img: '../media/songs/covers/miraclemilk.jpg',
+        img: 'miraclemilk.jpg',
         name: 'Cerebrite',
         artist: 'Mili',
-        music: '../media/songs/cerebrite.ogg',
-        lyrics: '../media/songs/lyrics/cerebrite.txt'
+        music: 'cerebrite.ogg',
+        lyrics: 'cerebrite.txt'
     },
     {
-        img: '../media/songs/covers/miraclemilk.jpg',
+        img: 'miraclemilk.jpg',
         name: 'Colorful',
         artist: 'Mili',
-        music: '../media/songs/colorful.ogg',
-        lyrics: '../media/songs/lyrics/colorful.txt'
+        music: 'colorful.ogg',
+        lyrics: 'colorful.txt'
     },
     {
-        img: '../media/songs/covers/miraclemilk.jpg',
+        img: 'miraclemilk.jpg',
         name: 'Ga1ahad and Scientific Witchery',
         artist: 'Mili',
-        music: '../media/songs/ga1ahad.ogg',
-        lyrics: '../media/songs/lyrics/ga1ahad.txt'
+        music: 'ga1ahad.ogg',
+        lyrics: 'ga1ahad.txt'
     },
     {
-        img: '../media/songs/covers/miraclemilk.jpg',
+        img: 'miraclemilk.jpg',
         name: 'world.execute(me)',
         artist: 'Mili',
-        music: '../media/songs/worldexecuteme.ogg',
-        lyrics: '../media/songs/lyrics/worldexecuteme.txt'
+        music: 'worldexecuteme.ogg',
+        lyrics: 'worldexecuteme.txt'
     },
     {
-        img: '../media/songs/covers/godonlyknows.jpg',
+        img: 'godonlyknows.jpg',
         name: 'God Only Knows -Secrets of the Goddess-',
         artist: 'Hayami Saori, Kawasaki Satomi & Masuda Takeshi',
-        music: '../media/songs/godonlyknows.mp3',
-        lyrics: '../media/songs/lyrics/godonlyknows.txt'
+        music: 'godonlyknows.mp3',
+        lyrics: 'godonlyknows.txt'
     },
     
     {
-        img: '../media/songs/covers/mmm.jpg',
+        img: 'mmm.jpg',
         name: 'The Bidding',
         artist: 'tally hall',
-        music: '../media/songs/thebidding.ogg',
-        lyrics: '../media/songs/lyrics/thebidding.txt'
+        music: 'thebidding.ogg',
+        lyrics: 'thebidding.txt'
     }
 ];
 
@@ -131,16 +139,16 @@ function loadTrack(){
     clearInterval(updateTimer);
     reset();
 
-    song.src = music_list[track_index].music;
+    song.src = musicDir + music_list[track_index].music;
     song.load();
 
-    songCover.src = music_list[track_index].img;
+    songCover.src = imgDir + music_list[track_index].img;
     songTitle.textContent = music_list[track_index].name;
     songArtist.textContent = music_list[track_index].artist;
 
     (async () => {
         try {
-          const resp = await fetch(music_list[track_index].lyrics);
+          const resp = await fetch(lyricsDir + music_list[track_index].lyrics);
           if (!resp.ok) throw null;
           lyrics.innerText = await resp.text();
         } catch {
@@ -329,7 +337,7 @@ function createListItem(image, title, artist, index){
     miniArtist.style.fontSize = "10px";
     miniArtist.innerText = artist;
 
-    listImage.src = image;
+    listImage.src = imgDir + image;
 
     unorderedList.append(list);
     list.append(box);
