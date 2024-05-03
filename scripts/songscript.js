@@ -1,3 +1,7 @@
+// TODO
+// [ ] Make variables for directories
+// [ ] Dynamically change height of song-list based on number of lists
+
 let progress = document.getElementById("progress");
 let fill = document.getElementById("progress-fill");
 

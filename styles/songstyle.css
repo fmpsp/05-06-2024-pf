@@ -1,4 +1,4 @@
-
+/* TODO stack songlist and lyrics grids on low width screens */
 
 * {
     box-sizing: border-box;
@@ -20,13 +20,9 @@ body {
     vertical-align: baseline;
     background-color: var(--background-color);
     overscroll-behavior: none;
-    /* user-select: none; */
-    
     display: flex;
     height: 100%;
     line-height: normal;
-    /* min-height: 600px;
-    min-width: 800px; */
     width: 100%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -76,7 +72,6 @@ body {
 
     grid-area: left-sidebar;
     position: relative;
-    /* width: 400px; */
     width: 40vw;
     z-index: 4;
     background-color: var(--background-color);
@@ -213,7 +208,7 @@ body {
     margin: -10px 4px;
     background: var(--background-color);
     padding: 0 3px;
-    z-index: 9;
+    z-index: 5;
 }
 
 .lyrics {
@@ -604,6 +599,43 @@ i.back {
     .image-sidearea {
         display: none;
     }
+
+    .header-area {
+        grid-column-end:unset;
+    }
+
+    .box {
+        grid-template-rows: 28px ;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+
+    .button {
+        margin-top: 14px;
+        height: 100%;
+    }
+
+    .header-area {
+        margin-top: 26px;
+        margin-bottom: 26px;
+        z-index:-1;
+    }
+
+    .top-container {
+        /* gap: 0px; */
+        grid-template-areas: unset;
+        grid-template-columns: unset;
+        height: unset;
+        min-height: unset;
+    }
+
+    .nav-bar {
+        height: 100%;
+    }
+
+    .library {
+        width: 100%;
+    }
 }
 
 @media (max-width: 610px) {
@@ -612,16 +644,6 @@ i.back {
         transform: translateY(0px);
     }
 
-    .box {
-        grid-template-rows: 28px ;
-    }
-
-    .header-area {
-        margin-top: 26px;
-        margin-bottom: 26px;
-        position: absolute;
-        z-index:-1;
-    }
 
     .back, .front, .und, .artist:active   {
         display: none;
@@ -634,31 +656,40 @@ i.back {
     .volume_slider {
         width: 80px;
     }
-    .song-bar, .other-features, .volume-container {
+    .song-bar, .other-features, .volume-container, .volume-button, .volume-percent, .current-time {
         min-width: none;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 485px) {
 .back, .front, .und, .random  {
     display: none;
 }
 
+
+.image-container {
+    display: none;
+    }
 .volume_slider {
     width: 80px;
 }
 
 .progress-container {
-    width: 80%; 
+    width: 80%;
 }
 
 .volume-percent {
     display: none;
     }
 
+.song-bar, .volume-container, .other-features {
+    min-width: unset;
+}
 }
 
 @media (max-width: 450px) {
+
+
     .back, .front, .und, .random  {
         display: none;
     }
@@ -674,10 +705,6 @@ i.back {
 
     .progress-container {
         width: 65%; 
-    }
-
-    .image-container {
-    display: none;
     }
 
     .music-player-container {
@@ -705,7 +732,7 @@ i.back {
     }
 
     .volume_slider {
-        width: 25vw;
+        width: 15vw;
     }
 }
 
