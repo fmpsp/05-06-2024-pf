@@ -588,6 +588,9 @@ i.back {
     border-radius: 100%;
 }
     
+#oneko {
+    display: none;
+}
 
 @media (max-width: 800px) {
     .und, .random  {

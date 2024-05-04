@@ -111,9 +111,7 @@
         </div>
     </div>
     <script>
-        $(document).ready(function(){
-        $('#fade').fadeIn(2000);
-        }); 
+        const onekoEnter = Math.floor(Math.random() * (10000-5000) + 5000);
 
         (async () => {
             fetch("https://raw.githubusercontent.com/adryd325/oneko.js/8fa8a1864aa71cd7a794d58bc139e755e96a236c/oneko.js")
@@ -122,6 +120,13 @@
                 .replace("(isReducedMotion)", "(false)"))
             .then(eval);
         })()
+                
+        $(document).ready(function(){
+        $('#fade').fadeIn(2000);
+        $('#oneko').fadeIn(10000);
+        }); 
+
+
     </script>
     <script type="text/javascript" src="../scripts/songscript.js"></script>
 </body>

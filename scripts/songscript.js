@@ -43,6 +43,13 @@ const music_list = [
         lyrics: 'betweentwoworlds.txt'
     },
     {
+        img: 'sleeptalkmetropolis.jpg',
+        name: 'Sleep Talk Metropolis',
+        artist: 'Mili',
+        music: 'sleeptalkmetropolis.ogg',
+        lyrics: 'sleeptalkmetropolis.txt'
+    },
+    {
         img: 'millenniummother.jpg',
         name: 'Every Other Ghost',
         artist: 'Mili',
